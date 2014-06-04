@@ -5,17 +5,10 @@ namespace FootballTournament2014
 {
     public class App
     {
-        public static Page GetMainPage()
-        {	
-            return new ContentPage
-            { 
-                Content = new Label
-                {
-                    Text = "Hello, Forms !",
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                },
-            };
+        private static Page homeView;
+        public static Page RootPage
+        {
+            get { return homeView ?? (homeView = new HomeView ()); }
         }
     }
 }

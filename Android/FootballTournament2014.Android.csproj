@@ -87,6 +87,19 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\slideout.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\about.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\about.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\about.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\about.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\news.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\news.png" />
   </ItemGroup>
   <Import Project="..\FootballTournament2014\FootballTournament2014.projitems" Label="Shared" Condition="Exists('..\FootballTournament2014\FootballTournament2014.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
@@ -96,5 +109,11 @@
       <Project>{AEA50B56-1C83-419C-9A00-2C9AC2AFA751}</Project>
       <Name>FootballTournament.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
   </ItemGroup>
 </Project>

@@ -107,6 +107,14 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\about.png" />
+    <BundleResource Include="Resources\about%402x.png" />
+    <BundleResource Include="Resources\refresh.png" />
+    <BundleResource Include="Resources\refresh%402x.png" />
+    <BundleResource Include="Resources\slideout.png" />
+    <BundleResource Include="Resources\slideout%402x.png" />
+    <BundleResource Include="Resources\news.png" />
+    <BundleResource Include="Resources\news%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

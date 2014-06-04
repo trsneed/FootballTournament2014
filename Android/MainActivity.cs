@@ -20,8 +20,9 @@ namespace FootballTournament2014.Android
             base.OnCreate(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
+            Xamarin.FormsMaps.Init(this, bundle);
 
-            SetPage(App.GetMainPage());
+            SetPage (FootballTournament2014.App.RootPage);
         }
     }
 }

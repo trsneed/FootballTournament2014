@@ -13,16 +13,22 @@ namespace FootballTournament2014.iOS
     public partial class AppDelegate : UIApplicationDelegate
     {
         UIWindow window;
+        Page page;
 
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+        public override bool FinishedLaunching (UIApplication app, NSDictionary options)
         {
+            window = new UIWindow (UIScreen.MainScreen.Bounds);
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                TextColor = UIColor.White
+            });
             Forms.Init();
+            Xamarin.FormsMaps.Init();
+            page = FootballTournament2014.App.RootPage;
+            window.RootViewController = page.CreateViewController ();
 
-            window = new UIWindow(UIScreen.MainScreen.Bounds);
-			
-            window.RootViewController = App.GetMainPage().CreateViewController();
-            window.MakeKeyAndVisible();
-			
+            window.MakeKeyAndVisible ();
+
             return true;
         }
     }

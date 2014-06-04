@@ -13,7 +13,7 @@ namespace FootballTournament2014
             Title = "Tournament 2014";
             MenuItems = new ObservableCollection<MenuItem> ();
             MenuItems.Add (new MenuItem {
-                Id = 0, Title = "News", MenuType = MenuType.News
+                Id = 0, Title = "News", MenuType = MenuType.News, Icon="news.png"
             });
             MenuItems.Add(new MenuItem
             {
