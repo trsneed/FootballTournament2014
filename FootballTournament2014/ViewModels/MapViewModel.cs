@@ -25,7 +25,7 @@ namespace FootballTournament2014
             results.ForEach(r => pins.Add(new Pin
             {
                 Type = PinType.Place,
-                //Position = r.Position,
+                Position = r.Position,
                 Label = r.Title.ToString(),
                 Address = r.City.ToString()
             }));

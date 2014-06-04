@@ -9,6 +9,7 @@ namespace FootballTournament2014
         private AboutView about;
         private NewsView news;
         private TeamsView teams;
+        private GroupMatchView groupMatches;
         private MapView map;
         public Action<MenuType> PageSelectionChanged;
         private Page pageSelection;
@@ -67,6 +68,9 @@ namespace FootballTournament2014
                         PageSelection = about;
                         break;
                     case MenuType.Groups:
+                        if(groupMatches == null)
+                            groupMatches = new GroupMatchView();
+                        PageSelection = groupMatches;
                         break;
                     case MenuType.Knockout:
                         break;
