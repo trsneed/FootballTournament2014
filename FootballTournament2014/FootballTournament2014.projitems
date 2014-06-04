@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{EB24946D-120A-476C-81F4-924880D22A2A}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>FootballTournament2014</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Color.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HorizontalListTextCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ListImageCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ListTextCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BaseView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomeMasterView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomeView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MapView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewsDetailsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TeamDetailView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TeamsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GroupMatchesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MapViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TeamsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+  </ItemGroup>
+</Project>
