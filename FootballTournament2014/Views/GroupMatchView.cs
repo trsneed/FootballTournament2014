@@ -35,6 +35,7 @@ namespace FootballTournament2014
                 {
                     foreach (var match in ViewModel.Result.Where(m=> m.MatchDate == g.Date))
                     {
+
                         g.Add(match);
                     }
                 }
@@ -55,10 +56,12 @@ namespace FootballTournament2014
             template.SetBinding (TextCell.TextProperty, "HomeTeam");
             template.SetBinding (TextCell.DetailProperty, "AwayTeam");
 
-            listView.ItemTemplate = template;
+            var viewTemplate = new DataTemplate(typeof(ScoreCell));
+
+            listView.ItemTemplate = viewTemplate;
 
             listView.ItemsSource = Groups;
-
+           
             stack.Children.Add(listView);
 
             Content = stack;

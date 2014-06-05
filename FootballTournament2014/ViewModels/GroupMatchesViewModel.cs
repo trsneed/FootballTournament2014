@@ -51,6 +51,14 @@ namespace FootballTournament2014
                         var responseString = await httpClient.GetStringAsync(feed);
                         Result.AddRange(MatchService.GetMatchDay(responseString));
                     }
+
+                    foreach(var item in Result)
+                    {
+                        item.HomeScore = (item.HomeScore == "" || item.HomeScore == null) ?
+                            "0" : item.HomeScore;
+                        item.AwayScore = (item.AwayScore == "" || item.AwayScore == null) ?
+                            "0" : item.AwayScore;
+                    }
                 }
                 this.ItemsLoaded(this, new EventArgs());
             } 

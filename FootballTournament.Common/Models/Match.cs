@@ -19,7 +19,7 @@ namespace FootballTournament2014.Common.Models
         [JsonProperty(PropertyName="score2")]
         public string HomeScoreOT {get;set;}
         [JsonProperty(PropertyName="score1ot")]
-        public string AwayScore {get;set;}
+        public string AwayScore { get;set;}
         [JsonProperty(PropertyName="score2ot")]
         public string AwayScoreOT {get;set;}
         [JsonProperty(PropertyName="score1p")]
