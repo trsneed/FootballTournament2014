@@ -8,42 +8,85 @@ namespace FootballTournament2014
 
         public ScoreCell ()
         {
-            var homeLabel = new Label {
-                YAlign = TextAlignment.Center
-            };
-            var homeScoreLabel = new Label {
-                YAlign = TextAlignment.Center
-            };
-            homeLabel.SetBinding (Label.TextProperty, "HomeTeam");
-            homeScoreLabel.SetBinding(Label.TextProperty, "HomeScore");
-            var layout = new StackLayout {
-                Padding = new Thickness(5, 0, 5, 0),
-                Orientation = StackOrientation.Horizontal,
-                HorizontalOptions = LayoutOptions.StartAndExpand,
-                Children = {homeLabel,homeScoreLabel}
+//            var homeLabel = new Label {
+//                YAlign = TextAlignment.Center,
+//                XAlign = TextAlignment.Start,
+//            };
+//            var homeScoreLabel = new Label {
+//                YAlign = TextAlignment.Center,
+//                XAlign = TextAlignment.Start,
+//            };
+//            homeLabel.SetBinding (Label.TextProperty, "HomeTeam");
+//            homeScoreLabel.SetBinding(Label.TextProperty, "HomeScore");
+//
+//            var vLable = new Label
+//            {
+//                XAlign = TextAlignment.End,
+//                YAlign = TextAlignment.Center,
+//            };
+//            var awayLabel = new Label {
+//                YAlign = TextAlignment.Center,
+//                XAlign = TextAlignment.End
+//            };
+//            var awayScoreLabel = new Label {
+//                YAlign = TextAlignment.Center,
+//                XAlign = TextAlignment.End,
+//                HorizontalOptions = LayoutOptions.End,
+//
+//            };
+//            vLable.Text = " vs. ";
+//            awayLabel.SetBinding (Label.TextProperty, "AwayTeam");
+//            awayScoreLabel.SetBinding(Label.TextProperty, "AwayScore");
+//
+//            var layout = new AbsoluteLayout {
+//                Padding = new Thickness(5, 5, 5, 5),
+//                HorizontalOptions = LayoutOptions.FillAndExpand,
+//                VerticalOptions = LayoutOptions.FillAndExpand,
+//                Children = {vLable}
+//            };
+////            layout.Children.Add(vLable);
+////            layout.Children.Add(awayScoreLabel);
+////            layout.Children.Add(awayLabel);
+//          
+//            View = layout;
+
+            AbsoluteLayout absoluteLayout = new AbsoluteLayout
+            {
+                BackgroundColor = Color.Blue.WithLuminosity(0.9),
+                VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-            var awayLabel = new Label {
-                YAlign = TextAlignment.Center
+            // Create two Labels for animating.
+            var text1 = new Label 
+            { 
+                Text = "AbsoluteLayout",
+                TextColor = Color.Black
             };
-            var awayScoreLabel = new Label {
-                YAlign = TextAlignment.Center
+            absoluteLayout.Children.Add(text1);
+            AbsoluteLayout.SetLayoutFlags(text1,
+                AbsoluteLayoutFlags.PositionProportional);
+
+            var text2 = new Label 
+            { 
+                Text = "AbsoluteLayout",
+                TextColor = Color.Black,
+                XAlign = TextAlignment.End
             };
-            awayLabel.SetBinding (Label.TextProperty, "AwayTeam");
-            awayScoreLabel.SetBinding(Label.TextProperty, "AwayScore");
-            layout.Children.Add(awayLabel);
-            layout.Children.Add(awayScoreLabel);
-            View = layout;
+            absoluteLayout.Children.Add(text2);
+            AbsoluteLayout.SetLayoutFlags(text2,
+                AbsoluteLayoutFlags.PositionProportional);
+
+            View = absoluteLayout;
         }
 
-        protected override void OnBindingContextChanged ()
-        {
-            // Fixme : this is happening because the View.Parent is getting 
-            // set after the Cell gets the binding context set on it. Then it is inheriting
-            // the parents binding context.
-            View.BindingContext = BindingContext;
-            base.OnBindingContextChanged ();
-        }
+//        protected override void OnBindingContextChanged ()
+//        {
+//            // Fixme : this is happening because the View.Parent is getting 
+//            // set after the Cell gets the binding context set on it. Then it is inheriting
+//            // the parents binding context.
+//            View.BindingContext = BindingContext;
+//            base.OnBindingContextChanged ();
+//        }
 //        public ScoreCell()
 //        {
 //            View = new StackLayout

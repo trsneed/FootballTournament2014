@@ -105,15 +105,15 @@
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="../packages/Xamarin.Forms.1.0.6188/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\FootballTournament.Common\FootballTournament.Common.csproj">
-      <Project>{AEA50B56-1C83-419C-9A00-2C9AC2AFA751}</Project>
-      <Name>FootballTournament.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FootballTournament.Common\FootballTournament.Common.csproj">
+      <Project>{AEA50B56-1C83-419C-9A00-2C9AC2AFA751}</Project>
+      <Name>FootballTournament.Common</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

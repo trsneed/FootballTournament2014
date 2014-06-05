@@ -30,7 +30,8 @@ namespace FootballTournament2014
             ViewModel.ItemsLoaded += new EventHandler((sender, e) =>
             {
                 this.Groups.Clear();
-                ViewModel.Result.ForEach(r => Groups.Add(new GroupHelper(r.MatchDate)));
+                ViewModel.Result.Select(r => r.MatchDate).Distinct().ToList()
+                    .ForEach(r => Groups.Add(new GroupHelper(r)));
                 foreach(var g in Groups)
                 {
                     foreach (var match in ViewModel.Result.Where(m=> m.MatchDate == g.Date))
