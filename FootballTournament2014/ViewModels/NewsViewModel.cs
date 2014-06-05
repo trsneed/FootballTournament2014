@@ -56,20 +56,25 @@ namespace FootballTournament2014
 
             IsBusy = true;
 
-            try{
-                var httpClient = new HttpClient();
-                var feed = "http://api.espn.com/v1/sports/soccer/fifa.world/news?apikey=trs58u4j7gw4aat7ck8dsmgc";
-                var responseString = await httpClient.GetStringAsync(feed);
-
-                NewsItems.Clear();
-                var items = await ParseFeed(responseString);
-                foreach (var item in items)
+            try
+            {
+                using( var httpClient = new HttpClient())
                 {
-                    newsItems.Add(item);
+                    var feed = "http://api.espn.com/v1/sports/soccer/fifa.world/news?apikey=trs58u4j7gw4aat7ck8dsmgc";
+                    var responseString = await httpClient.GetStringAsync(feed);
+
+                    NewsItems.Clear();
+                    var items = await ParseFeed(responseString);
+                    foreach (var item in items)
+                    {   
+                        newsItems.Add(item);
+                    }
                 }
-            } catch (Exception ex) {
+            } 
+            catch (Exception ex) 
+            {
                 var page = new ContentPage();
-                page.DisplayAlert ("Error", "Unable to load blog.", "OK", null);
+                page.DisplayAlert("Error", "Unable to load blog.", "OK", null);
             }
 
             IsBusy = false;

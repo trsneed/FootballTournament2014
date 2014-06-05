@@ -15,19 +15,19 @@ namespace FootballTournament2014.Common.Models
         [JsonProperty(PropertyName="team2_title")]
         public string AwayTeam {get;set;}
         [JsonProperty(PropertyName="score1")]
-        public int? HomeScore {get;set;}
+        public string HomeScore {get;set;}
         [JsonProperty(PropertyName="score2")]
-        public int? HomeScoreOT {get;set;}
+        public string HomeScoreOT {get;set;}
         [JsonProperty(PropertyName="score1ot")]
-        public int? AwayScore {get;set;}
+        public string AwayScore {get;set;}
         [JsonProperty(PropertyName="score2ot")]
-        public int? AwayScoreOT {get;set;}
+        public string AwayScoreOT {get;set;}
         [JsonProperty(PropertyName="score1p")]
-        public int? HomeScorePen {get;set;}
+        public string HomeScorePen {get;set;}
         [JsonProperty(PropertyName="score2p")]
-        public int? AwayScorePen {get;set;}
+        public string AwayScorePen {get;set;}
         [JsonProperty(PropertyName="play_at")]
-        public DateTime MatchDate { get; set; }
+        public string MatchDate { get; set; }
 
     }
 

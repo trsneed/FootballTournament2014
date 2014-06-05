@@ -30,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TeamsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GroupMatchView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\GroupHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using FootballTournament2014.Common.Services;
 using System.Net.Http;
-using System.Net.Http;
+using System.Linq;
 
 namespace FootballTournament2014
 {
@@ -15,9 +15,14 @@ namespace FootballTournament2014
         public GroupMatchesViewModel()
         {
         }
-
-        private ObservableCollection<MatchDay> _matchDays;
-        public ObservableCollection<MatchDay> MatchDays{ get; set; }
+        public EventHandler ItemsLoaded;
+        public List<Match> Result = new List<Match>();
+        //This dont work 
+//        private List<GroupHelper> groupMatches = new List<GroupHelper>();
+//        public List<GroupHelper> GroupMatches{ 
+//            get { return groupMatches; }
+//            set { groupMatches = value; OnPropertyChanged("GroupMatches"); }
+//        }
 
         private Command loadItemsCommand;
         /// <summary>
@@ -37,16 +42,17 @@ namespace FootballTournament2014
 
             try
             {
-                List<MatchDay> listOMatches = new List<MatchDay>();
+                Result.Clear();
                 using(var httpClient = new HttpClient())
                 {
                     for (int i = 1; i <= 15; i++)
                     {
                         var feed = string.Format("http://footballdb.herokuapp.com/api/v1/event/world.2014/round/{0}",i);
                         var responseString = await httpClient.GetStringAsync(feed);
-                        listOMatches.Add(MatchService.GetMatchDay(responseString));
+                        Result.AddRange(MatchService.GetMatchDay(responseString));
                     }
                 }
+                this.ItemsLoaded(this, new EventArgs());
             } 
             catch (Exception ex) 
             {
@@ -56,6 +62,24 @@ namespace FootballTournament2014
 
             IsBusy = false;
         }
+        //This is out because I was getting an argumentoutofrangeexception moving some logic to the view :)
+//        private async Task StageTheGroups(List<Match> matches)
+//        {
+//            await Task.Run(() =>
+//            {
+//                foreach (var date in matches.Select(p => p.MatchDate).Distinct())
+//                {
+//                    GroupMatches.Add(new GroupHelper(date));
+//                }
+//
+//                foreach (var matchDay in GroupMatches)
+//                {
+//                    matches.Where(m => m.MatchDate == matchDay.Date).ToList()
+//                     .ForEach(m => matchDay.Add(m));
+//                }
+//                this.ItemsLoaded(this, new EventArgs());
+//            });
+//        }
     }
 }
 

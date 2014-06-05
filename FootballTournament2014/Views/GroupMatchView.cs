@@ -1,78 +1,77 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FootballTournament2014
 {
     public class GroupMatchView:BaseView
     {
+        private GroupMatchesViewModel ViewModel
+        {
+            get{ return BindingContext as GroupMatchesViewModel; }
+        }
+
+        public ObservableCollection<GroupHelper> Groups{ get; set; }
         public GroupMatchView()
         {
+            BindingContext = new GroupMatchesViewModel();
 
+            this.Groups = new ObservableCollection<GroupHelper>();
+            var refresh = new ToolbarItem {
+                Command = ViewModel.LoadItemsCommand,
+                Icon = "refresh.png",
+                Name = "refresh",
+                Priority = 0
+            };
+            ToolbarItems.Add (refresh);
+
+            ViewModel.ItemsLoaded += new EventHandler((sender, e) =>
+            {
+                this.Groups.Clear();
+                ViewModel.Result.ForEach(r => Groups.Add(new GroupHelper(r.MatchDate)));
+                foreach(var g in Groups)
+                {
+                    foreach (var match in ViewModel.Result.Where(m=> m.MatchDate == g.Date))
+                    {
+                        g.Add(match);
+                    }
+                }
+            });
+
+            Title = "Group Match Schedule";
             var stack = new StackLayout {
                 Orientation = StackOrientation.Vertical,
                 Padding = new Thickness(0, 0, 0, 8)
             };
 
-            stack.Children.Add(CreateListView());
+            var listView = new ListView {
+                IsGroupingEnabled = true,
+                GroupDisplayBinding = new Binding ("Date"),
+                            };
+
+            var template = new DataTemplate (typeof (TextCell));
+            template.SetBinding (TextCell.TextProperty, "HomeTeam");
+            template.SetBinding (TextCell.DetailProperty, "AwayTeam");
+
+            listView.ItemTemplate = template;
+
+            listView.ItemsSource = Groups;
+
+            stack.Children.Add(listView);
 
             Content = stack;
         }
+            
 
-        ListView CreateListView()
+        protected override void OnAppearing ()
         {
-            var listView = new ListView {
-                IsGroupingEnabled = true,
-                GroupDisplayBinding = new Binding ("FirstInitial"),
-                GroupShortNameBinding = new Binding ("FirstInitial")
-            };
+            base.OnAppearing ();
+            if (ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy || ViewModel.Result.Count > 0)
+                return;
 
-            var template = new DataTemplate (typeof (TextCell));
-            template.SetBinding (TextCell.TextProperty, "FullName");
-            template.SetBinding (TextCell.DetailProperty, "Address");
-
-            listView.ItemTemplate = template;
-            listView.ItemsSource = new[] {
-                new Group ("C") {
-                    new Person { FullName = "Caprice Nave" }
-                },
-
-                new Group ("J") {
-                    new Person { FullName = "James Smith", Address = "404 Nowhere Street" },
-                    new Person { FullName = "John Doe", Address = "404 Nowhere Ave" }
-                }
-            };
-
-            return listView;
-        }
-    }
-
-    class Person
-    {
-        public string FullName
-        {
-            get;
-            set;
-        }
-
-        public string Address
-        {
-            get;
-            set;
-        }
-    }
-
-    class Group : ObservableCollection<Person>
-    {
-        public Group (string firstInitial)
-        {
-            FirstInitial = firstInitial;
-        }
-
-        public string FirstInitial
-        {
-            get;
-            private set;
+            ViewModel.LoadItemsCommand.Execute (null);
         }
     }
 }

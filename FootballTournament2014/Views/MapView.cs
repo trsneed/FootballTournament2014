@@ -14,8 +14,7 @@ namespace FootballTournament2014
         public MapView()
         {
             BindingContext = new MapViewModel();
-            var stack = new StackLayout {
-                Orientation = StackOrientation.Vertical,
+            var frame = new Frame {
                 Padding = new Thickness(0, 0, 0, 0)
             };
 
@@ -23,8 +22,8 @@ namespace FootballTournament2014
                 Distance.FromMiles(1100)));
             ViewModel.LoadPins().ForEach(m => map.Pins.Add(m));
 
-            stack.Children.Add(map);
-            Content = stack;
+            frame.Content = map;
+            Content = frame;
         }
 
       

@@ -10,6 +10,10 @@ namespace FootballTournament2014
             SetBinding (Page.TitleProperty, new Binding(BaseViewModel.TitlePropertyName));
             SetBinding (Page.IconProperty, new Binding(BaseViewModel.IconPropertyName));
         }
+
+        ActivityIndicator activity {get;set;}
+
+
     }
 }
 
