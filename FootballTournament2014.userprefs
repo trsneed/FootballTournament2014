@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina.7.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FootballTournament2014/Helpers/ScoreCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FootballTournament2014/ViewModels/GroupMatchesViewModel.cs">
     <Files>
-      <File FileName="FootballTournament2014/Helpers/ScoreCell.cs" Line="59" Column="13" />
-      <File FileName="FootballTournament2014/Views/GroupMatchView.cs" Line="1" Column="1" />
-      <File FileName="FootballTournament2014/Views/HomeMasterView.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament.Common/Services/MatchService.cs" Line="52" Column="40" />
+      <File FileName="FootballTournament.Common/Models/Match.cs" Line="6" Column="47" />
+      <File FileName="FootballTournament.Common/Models/KnockoutMatch.cs" Line="20" Column="10" />
+      <File FileName="FootballTournament2014/ViewModels/KnockoutMatchesViewModel.cs" Line="1" Column="1" />
       <File FileName="FootballTournament2014/ViewModels/GroupMatchesViewModel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

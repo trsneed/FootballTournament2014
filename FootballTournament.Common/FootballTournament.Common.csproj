@@ -43,6 +43,7 @@
     <Compile Include="Services\MatchService.cs" />
     <Compile Include="Services\NewsService.cs" />
     <Compile Include="Services\TeamsService.cs" />
+    <Compile Include="Models\KnockoutMatch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="../packages/Xamarin.Forms.1.0.6188/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets" />
