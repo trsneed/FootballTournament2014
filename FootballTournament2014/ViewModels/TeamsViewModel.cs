@@ -70,7 +70,7 @@ namespace FootballTournament2014
                     Teams.Add(item);
                 }
                 keepTeams = Teams.ToList();
-            } catch (Exception ex) {
+            } catch (Exception) {
                 var page = new ContentPage();
                 page.DisplayAlert ("Error", "Unable to load teams.", "OK", null);
             }

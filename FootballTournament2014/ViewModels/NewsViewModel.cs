@@ -72,10 +72,10 @@ namespace FootballTournament2014
                     }
                 }
             } 
-            catch (Exception ex) 
+            catch (Exception) 
             {
                 var page = new ContentPage();
-                page.DisplayAlert("Error", "Unable to load blog.", "OK", null);
+                page.DisplayAlert("Error", "Unable to load News.", "OK", null);
             }
 
             IsBusy = false;

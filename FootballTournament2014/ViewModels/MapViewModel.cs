@@ -28,10 +28,10 @@ namespace FootballTournament2014
                 Position = r.Position,
                 Label = r.Title.ToString(),
                 Address = r.City.ToString()
-            }));
-            return pins;  
-
+            }));             
             IsBusy = false;
+
+            return pins;  
         }
     }
 }

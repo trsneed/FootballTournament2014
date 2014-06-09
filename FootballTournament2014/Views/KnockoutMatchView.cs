@@ -30,7 +30,7 @@ namespace FootballTournament2014
 
             var listView = new ListView ();
 
-            listView.ItemsSource = ViewModel.KnockoutMatches;
+                   listView.ItemsSource = ViewModel.KnockoutMatches;
 
             var cell = new DataTemplate(typeof(ListTextCell));
 

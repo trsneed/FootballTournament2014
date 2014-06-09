@@ -32,9 +32,9 @@ namespace FootballTournament2014
         /// </summary>
         public Command LoadItemsCommand
         {
-            get { return loadItemsCommand ?? (loadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand())); }
+            get { return loadItemsCommand ?? (loadItemsCommand = new Command(() =>  ExecuteLoadItemsCommand())); }
         }
-        private async Task ExecuteLoadItemsCommand()
+        private void ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;
@@ -43,20 +43,19 @@ namespace FootballTournament2014
 
             try
             {
-                await Task.Run(() => 
-                {
-                    KnockoutMatches.Clear();
-                    var result = MatchService.GetKnockoutMatches();
+                KnockoutMatches.Clear();
+                var result = MatchService.GetKnockoutMatches();
 
-                    foreach (var item in result) {
-                        KnockoutMatches.Add(item);
-                    }
-                }); 
+                foreach (var item in result)
+                {
+                    KnockoutMatches.Add(item);
+                }
+         
             }
-            catch (Exception ex) 
+            catch (Exception)
             {
                 var page = new ContentPage();
-                page.DisplayAlert ("Error", "Unable to load matches.", "OK", null);
+                page.DisplayAlert("Error", "Unable to load matches.", "OK", null);
             }
 
             IsBusy = false;

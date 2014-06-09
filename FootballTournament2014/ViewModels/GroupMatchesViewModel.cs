@@ -63,7 +63,7 @@ namespace FootballTournament2014
                 }
                 this.ItemsLoaded(this, new EventArgs());
             } 
-            catch (Exception ex) 
+            catch (Exception) 
             {
                 var page = new ContentPage();
                 page.DisplayAlert ("Error", "Unable to load matches.", "OK", null);
