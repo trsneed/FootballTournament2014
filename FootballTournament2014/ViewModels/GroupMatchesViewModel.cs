@@ -14,6 +14,7 @@ namespace FootballTournament2014
     {
         public GroupMatchesViewModel()
         {
+            Title = "Group Rounds";
         }
         public EventHandler ItemsLoaded;
         public List<Match> Result = new List<Match>();

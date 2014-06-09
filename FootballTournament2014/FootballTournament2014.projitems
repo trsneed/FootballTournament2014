@@ -33,6 +33,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\GroupHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ScoreCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\KnockoutMatchesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\KnockoutMatchView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\KnockoutMatchCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

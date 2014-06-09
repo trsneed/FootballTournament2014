@@ -25,7 +25,7 @@ namespace FootballTournament2014
             });
             MenuItems.Add(new MenuItem
             {
-                Id = 3, Title = "Knockout Stage", MenuType = MenuType.Groups
+                Id = 3, Title = "Knockout Stage", MenuType = MenuType.Knockout
             });
             MenuItems.Add(new MenuItem
             {

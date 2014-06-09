@@ -3,64 +3,52 @@ using Xamarin.Forms;
 
 namespace FootballTournament2014
 {
-    public class ScoreCell : ViewCell
+    public class KnockoutMatchCell : ViewCell
     {
-
-        public ScoreCell ()
+        public KnockoutMatchCell()
         {
             Grid grid = new Grid
             {
-                Padding = new Thickness(5, 10, 0, 0),
                 ColumnDefinitions =
                 {
                     new ColumnDefinition { Width = new GridLength(10, GridUnitType.Star) },
-                    new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) },
                     new ColumnDefinition
                     { Width = new GridLength(25, 
-                            GridUnitType.Absolute)
+                        GridUnitType.Absolute)
                     }, 
-                    new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) },
                     new ColumnDefinition { Width = new GridLength(10, GridUnitType.Star)  },
                 },
+
+               
             };
 
             var homeLabel = new Label()
             {
                 YAlign = TextAlignment.Center,
-                XAlign = TextAlignment.End,
+                Font = Font.SystemFontOfSize(15),
             };
             var awayLabel = new Label()
             {
-                YAlign = TextAlignment.Center
-            };
-            var homeScore = new Label()
-            {
                 YAlign = TextAlignment.Center,
-                XAlign = TextAlignment.End
+                Font = Font.SystemFontOfSize(15),
+
             };
-            var awayScore = new Label()
+            var matchLabel = new Label()
             {
-                YAlign = TextAlignment.Center
+                TextColor = Color.Blue
             };
             homeLabel.SetBinding(Label.TextProperty, "HomeTeam");
             awayLabel.SetBinding(Label.TextProperty, "AwayTeam");
-            homeScore.SetBinding(Label.TextProperty, "HomeScore");
-            awayScore.SetBinding(Label.TextProperty, "AwayScore");
-
-            grid.Children.Add(homeLabel);
-            
-            grid.Children.Add(homeScore, 1, 0);
+            matchLabel.SetBinding(Label.TextProperty, "KnockoutMatchName");
+            grid.Children.Add(homeLabel,0,1);
             grid.Children.Add(new Label
             {
                 Text = "vs.",
                 YAlign = TextAlignment.Center,
-            }, 2, 0);
-            grid.Children.Add(awayScore, 3, 0);
-            grid.Children.Add(awayLabel, 4, 0);
-            
+            }, 1, 1);
+            grid.Children.Add(awayLabel, 2, 1);
 
             this.View = grid;
-            this.View.HorizontalOptions = LayoutOptions.Center;
         }
     }
 }

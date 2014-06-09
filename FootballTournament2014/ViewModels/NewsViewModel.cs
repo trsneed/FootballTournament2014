@@ -13,6 +13,7 @@ namespace FootballTournament2014
     {
         public NewsViewModel()
         {
+            Title = "News";
         }
 
         private ObservableCollection<Headline> newsItems = new ObservableCollection<Headline>();

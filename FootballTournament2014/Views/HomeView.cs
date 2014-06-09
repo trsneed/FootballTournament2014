@@ -21,12 +21,12 @@ namespace FootballTournament2014
             Master = master = new HomeMasterView (ViewModel);
 
             var homeNav = new NavigationPage(master.PageSelection) {
-                Tint = Helpers.Color.DarkBlue.ToFormsColor()
+                Tint = Helpers.Color.Greenish.ToFormsColor()
             };
 
             Detail = homeNav;
 
-            pages.Add (MenuType.About, homeNav);
+            pages.Add (MenuType.News, homeNav);
 
             master.PageSelectionChanged = (menuType) => {
 
@@ -36,7 +36,7 @@ namespace FootballTournament2014
                 }
                 else{
                     newPage = new NavigationPage(master.PageSelection){
-                        Tint = Helpers.Color.DarkBlue.ToFormsColor()
+                        Tint = Helpers.Color.Greenish.ToFormsColor()
                     };
                     pages.Add (menuType, newPage);
                 }

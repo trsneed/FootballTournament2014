@@ -18,7 +18,7 @@ namespace FootballTournament2014
             };
 
             var activity = new ActivityIndicator {
-                Color = Helpers.Color.DarkBlue.ToFormsColor(),
+                Color = Helpers.Color.Greenish.ToFormsColor(),
                 IsEnabled = true
             };
             activity.SetBinding (ActivityIndicator.IsVisibleProperty, "IsBusy");
