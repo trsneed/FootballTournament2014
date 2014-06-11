@@ -11,3 +11,5 @@ Posts:
 - [Introducing Xamarin.Forms](http://trsneed.com/xamarin-forms-inching-closer-to-write-once-run-anywhere-native/)
 
 - [Adding Windows Phone for Indie Developers](http://trsneed.com/adding-a-windows-phone-app-to-a-existing-xamarin-forms-solution/)
+
+- [Customize a list view cell](http://trsneed.com/customize-xamarin-forms-listview-with-viewcell/)
