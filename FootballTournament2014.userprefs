@@ -1,18 +1,20 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina.7.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FootballTournament2014/ViewModels/HomeViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FootballTournament2014/ViewModels/KnockoutMatchesViewModel.cs">
     <Files>
-      <File FileName="FootballTournament2014/Views/KnockoutMatchView.cs" Line="18" Column="15" />
-      <File FileName="FootballTournament2014/Views/GroupMatchView.cs" Line="1" Column="1" />
-      <File FileName="FootballTournament2014/Views/HomeMasterView.cs" Line="78" Column="71" />
-      <File FileName="FootballTournament2014/Views/HomeView.cs" Line="1" Column="1" />
-      <File FileName="FootballTournament2014/App.cs" Line="1" Column="1" />
-      <File FileName="FootballTournament2014/ViewModels/HomeViewModel.cs" Line="28" Column="79" />
+      <File FileName="FootballTournament2014/ViewModels/KnockoutMatchesViewModel.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament2014/ViewModels/NewsViewModel.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament2014/Views/KnockoutMatchView.cs" Line="1" Column="1" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament2014/Helpers/KnockoutMatchCell.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament2014/ViewModels/TeamsViewModel.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament2014/ViewModels/GroupMatchesViewModel.cs" Line="1" Column="1" />
+      <File FileName="FootballTournament2014/ViewModels/MapViewModel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FootballTournament2014.Android />
+  <MonoDevelop.Ide.ItemProperties.FootballTournament2014.Android AndroidDeviceId-Debug="192.168.56.101:5555" />
 </Properties>
