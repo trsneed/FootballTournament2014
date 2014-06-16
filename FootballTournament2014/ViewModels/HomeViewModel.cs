@@ -33,7 +33,11 @@ namespace FootballTournament2014
             });
             MenuItems.Add(new MenuItem
             {
-                Id = 5, Title = "About", MenuType = MenuType.About, Icon = "about.png"
+                Id = 5, Title = "Podcasts", MenuType = MenuType.Podcast
+            });
+            MenuItems.Add(new MenuItem
+            {
+                Id = 6, Title = "About", MenuType = MenuType.About, Icon = "about.png"
             });
         }
 

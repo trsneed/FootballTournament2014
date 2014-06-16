@@ -12,6 +12,7 @@ namespace FootballTournament2014
         private GroupMatchView groupMatches;
         private KnockoutMatchView knockoutMatches;
         private MapView map;
+        private PodcastView podcast;
         public Action<MenuType> PageSelectionChanged;
         private Page pageSelection;
         private MenuType menuType = MenuType.About;
@@ -94,6 +95,12 @@ namespace FootballTournament2014
                         if(teams == null)
                             teams = new TeamsView();
                         PageSelection = teams;
+                        break;
+                    case MenuType.Podcast:
+                        if(podcast ==null)
+                            podcast = new PodcastView();
+
+                        PageSelection = podcast;
                         break;
                 }
             };

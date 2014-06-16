@@ -11,7 +11,8 @@ namespace FootballTournament2014.Common.Models
         Groups,
         Knockout,
         News,
-        Teams
+        Teams, 
+        Podcast
     }
     public class MenuItem : BaseModel
     {

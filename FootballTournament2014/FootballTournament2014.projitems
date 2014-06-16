@@ -35,6 +35,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\KnockoutMatchesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\KnockoutMatchView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\KnockoutMatchCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PodcastView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PodcastViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PodcastDetalView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
